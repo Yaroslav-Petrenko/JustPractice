@@ -1,21 +1,40 @@
-'use stcict';
-// make some chenges
-// a = 5;
-// console.log(a);
+/* Задание на урок:
 
-// const obj = {
-// 	name: (number) => number,
-// 	0: 'a',
-// 	1: 'b',
-// };
-// console.log(obj['0']);
+1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
 
-const isCheked = 5;
-const isCheked2 = 1;
-const isCheked3 = 1;
-const isCheked4 = 1;
-const isCheked5 = 5;
+2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
+отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит - 
+возвращаем пользователя к вопросам опять
 
-const res = isCheked && isCheked2 && isCheked3 && isCheked4 && isCheked5;
+3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
+"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше - 
+"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
 
-console.log(res);
+4) Потренироваться и переписать цикл еще двумя способами*/
+
+// Код возьмите из предыдущего домашнего задания
+
+'use strict';
+
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?');
+
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+};
+
+for (let i = 0; i < 1; i++) {
+  const lastFilm = prompt('Один из последних просмотренных фильмов?', '');
+  const filmRating = prompt('На сколько оцените его?');
+
+  if (!lastFilm || lastFilm.length > 50) {
+		i--;
+  } else {
+    personalMovieDB.movies[lastFilm] = filmRating;
+  }
+}
+
+console.log(personalMovieDB);
