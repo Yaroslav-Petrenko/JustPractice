@@ -1,5 +1,5 @@
 'use stcict';
-
+// make some chenges
 // a = 5;
 // console.log(a);
 
